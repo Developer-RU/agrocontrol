@@ -8,8 +8,7 @@ while True :
 
 	try:
 
-		ser = serial.Serial
-		(
+		ser = serial.Serial (
 			port='/dev/ttyUSB0',
 			baudrate=9600,
 			parity=serial.PARITY_ODD,
@@ -19,7 +18,7 @@ while True :
 
 		ser.isOpen()
 
-		while True :
+		while ser.isOpen() :
 
 			strdata = ""
 
