@@ -1,13 +1,15 @@
 #!/usr/bin/python
 # -*- coding: utf-8
 
-import MySQLdb, time, serial, json, time, datetime, gc
+import MySQLdb, time, serial, json, time, gc
+from datetime import datetime
 
 while True :
 
 	try:
 
-		ser = serial.Serial(
+		ser = serial.Serial
+		(
 			port='/dev/ttyUSB0',
 			baudrate=9600,
 			parity=serial.PARITY_ODD,
@@ -20,7 +22,9 @@ while True :
 		while True :
 
 			strdata = ""
+
 			while ser.inWaiting() > 0:
+
 				strdata += ser.read(1)
 				time.sleep(0.01)
 
